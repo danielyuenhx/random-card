@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 # create window
 root = Tk()
 root.title("Random Card Picker")
-root.geometry("900x500")
+root.geometry("400x425")
 root.configure(background="green")
 
 num_list =['2','3','4','5','6','7','8','9','10','jack','queen','king','ace']
@@ -34,10 +34,6 @@ def get_image(card):
     return out_card_img
 
 def draw():
-    # num = random.choice(num_list)
-    # shape = random.choice(shape_list)
-    # card = num + '_of_' + shape
-    # return card
     card = random.choice(deck)
     deck.remove(card)
 
@@ -69,19 +65,6 @@ card_label.pack(pady=20)
 # create draw card button
 button = Button(root, text='Draw Card', font=('Helvetica', 14), command=draw)
 button.pack(pady=20)
-
-# two step, define then put on screen
-# myLabel = Label(root, text="hello world")
-
-# pack - put on screen (shove at the first available spot)
-# myLabel.pack()
-
-# use grid system
-# myLabel.grid(row=0, column=5)
-
-# button
-# myButton = Button(root, text="Draw Card", padx=50, pady=50)
-# myButton.grid(row=0, column=0)
 
 if __name__ == "__main__":
     # create event loop to keep GUI on
